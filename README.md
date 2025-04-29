@@ -71,11 +71,11 @@ npm run dev
 ```
 bloodbank-app/
 ├── frontend/               # React frontend
-├── backend/                # Express backend
 ├── services/
 │   ├── chatbot/            # FastAPI-based NLP chatbot
 │   ├── pdf_service/        # PDF generation logic
 │   └── email_service/      # Email sending logic
+├── server.js
 └── README.md
 ```
 
