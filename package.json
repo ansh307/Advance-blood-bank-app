@@ -1,0 +1,30 @@
+{
+  "name": "blood-bank-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run email\" \"npm run pdf\" \"npm run chatbot\"",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "email": "cd python-services/email-service && uvicorn app.main:app --port 8001 --reload",
+    "pdf": "cd python-services/pdf-service && uvicorn app.main:app --port 8002 --reload",
+    "chatbot": "cd python-services/chatbot-service && uvicorn main:app --port 8003 --reload"
+  },
+  "author": "Ansh",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}

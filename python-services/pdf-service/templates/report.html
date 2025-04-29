@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Inventory Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-color: #c0392b;
+            --light-gray: #f9f9f9;
+            --border-color: #ddd;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fff;
+            color: var(--text-dark);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+            transition: background-color 0.2s ease;
+        }
+
+        @media screen and (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid var(--border-color);
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                font-weight: bold;
+                text-align: left;
+                text-transform: capitalize;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Blood Inventory Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Blood Group</th>
+                <th>Inventory Type</th>
+                <th>Quantity (ML)</th>
+                <th>Donor Email</th>
+                <th>Time & Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td data-label="Blood Group">{{ record.bloodGroup }}</td>
+                <td data-label="Inventory Type">{{ record.inventoryType }}</td>
+                <td data-label="Quantity (ML)">{{ record.quantity }}</td>
+                <td data-label="Donor Email">{{ record.email }}</td>
+                <td data-label="Time & Date">{{ record.createdAt }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
