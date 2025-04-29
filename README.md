@@ -57,33 +57,12 @@ git clone https://github.com/your-username/bloodbank-app.git
 cd bloodbank-app
 ```
 
-### 2. Start MERN Backend
+### 2. Start MERN frontend and backend and all the microservices
 
 ```bash
-cd backend
 npm install
 npm run dev
 ```
-
-### 3. Start Frontend
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-### 4. Run Python Microservices
-
-Each service is independent. Example for chatbot:
-
-```bash
-cd services/chatbot
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-Repeat for `pdf_service/` and `email_service/`.
 
 ---
 
