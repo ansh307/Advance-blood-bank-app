@@ -94,8 +94,3 @@ Pull requests are welcome! For major changes, please open an issue first.
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [React](https://reactjs.org/)
 - [MongoDB](https://www.mongodb.com/)
-```
-
----
-
-Would you like me to generate a second version with deployment details (Docker, NGINX, etc.) as well?
